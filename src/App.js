@@ -1,9 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-
+import ReactGA from 'react-ga';
 import React, { useState } from 'react';
 
+
 function App() {
+  ReactGA.initialize('G-WEYH625Q9M');
+  ReactGA.pageview(window.location.pathname + window.location.search);
   const [email, setEmail] = useState('');
 
   const handleChange = (e) => {
@@ -14,6 +17,8 @@ function App() {
     e.preventDefault();
     console.log(email);
   };
+
+
 
   return (
     <div className="App">
