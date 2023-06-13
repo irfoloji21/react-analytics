@@ -17,6 +17,11 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(email);
+    ReactGA.event({
+      category: 'InvalidEmail',
+      action: 'LoginAttempt',
+      label: email,
+    });
   };
 
 
